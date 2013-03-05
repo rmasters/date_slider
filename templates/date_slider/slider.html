@@ -1,0 +1,12 @@
+{% block list_open %}<ul>{% endblock %}
+
+{% for date in dates %}
+
+{% if date.is_current %}
+    {% block current_item %}<li>Current: {{ date }}</li>{% endblock %}
+{% else %}
+    {% block item %}<li>{{ date }}</li>{% endblock %}
+{% endif %}
+
+{% endfor %}
+{% block list_close %}</ul>{% endblock %}
