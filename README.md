@@ -36,6 +36,22 @@ In the template you want the control in:
     {% load date_slider %}
     {% date_slider date %}
 
+Without overriding the built-in templates, this produces HTML like:
+
+    <ul>
+        <li>2013-02-28</li>
+        <li>2013-03-01</li>
+        <li>2013-03-02</li>
+        <li>2013-03-03</li>
+        <li>2013-03-04</li>
+        <li>Current: 2013-03-05</li>
+        <li>2013-03-05</li>
+        <li>2013-03-06</li>
+    </ul>
+
+Where the current date is the 5th March, 2013. 5 days before and 2 after are
+included by default (options todo).
+
 ### Date item display
     
 Override and inherit the template `date_slider/slider.html`. You may need an
@@ -52,8 +68,6 @@ version of slider.html will be used instead of the default.
             templates/
                 date_slider/
                     slider.html     -- Your slider.html
-
-`app/templates/date_slider/slider.html`
 
 If there is a way to do this without an extra loader please submit a PR/issue.
 
